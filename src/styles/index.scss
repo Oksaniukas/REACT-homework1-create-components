@@ -1,8 +1,4 @@
-body {
-  background-color: grey;
-
-  .logo {
-    width: 200px;
-    height: 200px;
-  }
-}
+@import url(./base.scss);
+@import url(./header.scss);
+@import url(./buttons.scss);
+@import url(./cards.scss);

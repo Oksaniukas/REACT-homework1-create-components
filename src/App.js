@@ -1,9 +1,13 @@
-import Logo from "./components/Logo";
+import React from "react";
+import Header from "./components/Header";
+import Main from './components/Main'
+
 
 function App() {
   return (
-    <div className="App">
-      <Logo/>
+    <div className="app-wrapper">
+      <Header />
+      <Main />
     </div>
   );
 }
