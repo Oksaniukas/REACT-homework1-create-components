@@ -13,7 +13,7 @@ function CardOfProduct(props) {
             </div>
          </div>
          <div className="favorite">
-            <img className="favorite-icon" src="../assets/images/like.svg" alt="like"/>
+            <img className="favorite-icon" src="./assets/images/like.svg" alt="like"/>
          </div>
       </div>
    )
