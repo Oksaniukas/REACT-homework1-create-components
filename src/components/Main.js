@@ -5,12 +5,12 @@ import dataButtons from "../databuttons";
 import CardOfProduct from "./ProductCards";
 
 function Main() {
-   let listOfCards = dataCards.map(card => {
-      return <CardOfProduct datacards={card} />
+   let listOfCards = dataCards.map((card, idx) => {
+      return <CardOfProduct key={idx} datacards={card} />
    })
-   let listOfButtons = dataButtons.map(button => {
+   let listOfButtons = dataButtons.map((button, uid) => {
       return ( 
-      <Button button={button} />
+      <Button key={button.uid} button={button} />
       )
    })
 
