@@ -13,10 +13,10 @@ function CardOfProduct(props) {
    }
 
    //***HEARTS ********************************************************/
-   let [heart, setHeart] = useState(props.datacards.isLiked)
+   let [heart, setHeart] = useState(props.datacard.isLiked)
    
    // let heartClass = heart ? 'favourite red' : 'favourite'
-   let heartClass = heart ? ' ./assets/images/like.svg' : './assets/images/like2.svg'
+   let heartClass = heart ? './assets/images/like2.svg' : ' ./assets/images/like.svg' 
 
    let changeFavourite = () => {
       setHeart(prev => !prev)
@@ -28,17 +28,20 @@ let [number1, setNumber1] = useState(0)
       setNumber1(prev => prev+1)
    }
    let changeNumberMinus = () => {
-      setNumber1(prev => prev-1)
+      setNumber1(prev => {
+         if (prev ===0) return 0  /****до 0 и стоп */
+         return prev-1
+      })
    }
 /*************************** */
    return(
       <div className="card">
          {number}
          {heart}
-         <img src={props.datacards.img} alt='cardimage' />
+         <img src={props.datacard.img} alt='cardimage' />
          <div className="text-block">
-            <h3>{props.datacards.title}</h3>
-            <div className="text-price">{props.datacards.price} €</div>
+            <h3>{props.datacard.title}</h3>
+            <div className="text-price">{props.datacard.price} €</div>
             <div className="button-in-cart" onClick={changeNumber}>  
                Добавить в корзину
             </div>
